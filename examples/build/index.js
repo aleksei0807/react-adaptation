@@ -60,12 +60,33 @@
 
 	var _default2 = _interopRequireDefault(_default);
 
+	var _float = __webpack_require__(161);
+
+	var _float2 = _interopRequireDefault(_float);
+
+	var _customComponents = __webpack_require__(162);
+
+	var _customComponents2 = _interopRequireDefault(_customComponents);
+
+	var _maxWidth = __webpack_require__(163);
+
+	var _maxWidth2 = _interopRequireDefault(_maxWidth);
+
+	var _containerMaxWidth = __webpack_require__(164);
+
+	var _containerMaxWidth2 = _interopRequireDefault(_containerMaxWidth);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	_reactDom2.default.render(_react2.default.createElement(
 		'div',
 		null,
-		_react2.default.createElement(_default2.default, null)
+		_react2.default.createElement(_default2.default, null),
+		_react2.default.createElement(_float2.default, null),
+		_react2.default.createElement('div', { style: { clear: 'both' } }),
+		_react2.default.createElement(_customComponents2.default, null),
+		_react2.default.createElement(_maxWidth2.default, null),
+		_react2.default.createElement(_containerMaxWidth2.default, null)
 	), document.getElementById('root'));
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
@@ -19869,6 +19890,283 @@
 	};
 
 	exports.default = ReactAdaptation;
+
+/***/ },
+/* 161 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/opt/aleksei/react-adaptation/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(160);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var FloatExampleComponent = function (_Component) {
+		_inherits(FloatExampleComponent, _Component);
+
+		function FloatExampleComponent() {
+			_classCallCheck(this, FloatExampleComponent);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(FloatExampleComponent).apply(this, arguments));
+		}
+
+		_createClass(FloatExampleComponent, [{
+			key: 'render',
+			value: function render() {
+				var ra = this.props.ra;
+
+				return _react2.default.createElement(
+					'div',
+					{ ref: ra.container, className: ra.shouldAdaptate ? "container-float mobile" : "container-float", style: { color: 'red' } },
+					_react2.default.createElement(
+						'div',
+						{ style: { float: 'left', width: 300 } },
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+					),
+					_react2.default.createElement(
+						'div',
+						{ style: { float: 'left', width: 400 } },
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+					)
+				);
+			}
+		}]);
+
+		return FloatExampleComponent;
+	}(_react.Component);
+
+	exports.default = (0, _index2.default)(FloatExampleComponent);
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "float.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/opt/aleksei/react-adaptation/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(160);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CustomComponentsComponent = function (_Component) {
+		_inherits(CustomComponentsComponent, _Component);
+
+		function CustomComponentsComponent() {
+			_classCallCheck(this, CustomComponentsComponent);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(CustomComponentsComponent).apply(this, arguments));
+		}
+
+		_createClass(CustomComponentsComponent, [{
+			key: 'render',
+			value: function render() {
+				var ra = this.props.ra;
+
+				return _react2.default.createElement(
+					'div',
+					{ ref: ra.container, className: ra.shouldAdaptate ? "container mobile" : "container", style: { color: 'blue' } },
+					_react2.default.createElement(
+						'div',
+						{ style: { display: 'block' } },
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+					),
+					_react2.default.createElement(
+						'div',
+						{ ref: ra.component },
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+					),
+					_react2.default.createElement(
+						'div',
+						{ ref: ra.component },
+						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+					)
+				);
+			}
+		}]);
+
+		return CustomComponentsComponent;
+	}(_react.Component);
+
+	exports.default = (0, _index2.default)(CustomComponentsComponent);
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "customComponents.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/opt/aleksei/react-adaptation/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(160);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var MaxWidthExampleComponent = function (_Component) {
+		_inherits(MaxWidthExampleComponent, _Component);
+
+		function MaxWidthExampleComponent() {
+			_classCallCheck(this, MaxWidthExampleComponent);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(MaxWidthExampleComponent).apply(this, arguments));
+		}
+
+		_createClass(MaxWidthExampleComponent, [{
+			key: 'render',
+			value: function render() {
+				var ra = this.props.ra;
+
+				return _react2.default.createElement(
+					'div',
+					{ ref: ra.container, className: ra.shouldAdaptate ? "container mobile" : "container", style: { color: 'green' } },
+					_react2.default.createElement(
+						'div',
+						null,
+						'Lorem ipsum dolor.'
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						'Lorem ipsum dolor.'
+					)
+				);
+			}
+		}]);
+
+		return MaxWidthExampleComponent;
+	}(_react.Component);
+
+	exports.default = (0, _index2.default)(MaxWidthExampleComponent, { maxWidth: 768 });
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "maxWidth.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/opt/aleksei/react-adaptation/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _index = __webpack_require__(160);
+
+	var _index2 = _interopRequireDefault(_index);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ContainerMaxWidthExampleComponent = function (_Component) {
+		_inherits(ContainerMaxWidthExampleComponent, _Component);
+
+		function ContainerMaxWidthExampleComponent() {
+			_classCallCheck(this, ContainerMaxWidthExampleComponent);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(ContainerMaxWidthExampleComponent).apply(this, arguments));
+		}
+
+		_createClass(ContainerMaxWidthExampleComponent, [{
+			key: 'render',
+			value: function render() {
+				var ra = this.props.ra;
+
+				return _react2.default.createElement(
+					'div',
+					{ ref: ra.container, className: ra.shouldAdaptate ? "container mobile" : "container", style: { padding: 20, color: '#598f11' } },
+					_react2.default.createElement(
+						'div',
+						null,
+						'Lorem ipsum dolor.'
+					),
+					_react2.default.createElement(
+						'div',
+						null,
+						'Lorem ipsum dolor.'
+					)
+				);
+			}
+		}]);
+
+		return ContainerMaxWidthExampleComponent;
+	}(_react.Component);
+
+	exports.default = (0, _index2.default)(ContainerMaxWidthExampleComponent, { containerMaxWidth: 768 });
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/opt/aleksei/react-adaptation/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "containerMaxWidth.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);

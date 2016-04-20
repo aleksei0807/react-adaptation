@@ -9,6 +9,16 @@
 		.container > * {
 			display: inline-block;
 		}
+		.container.mobile > * {
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+		.container-float.mobile > * {
+			width: 100% !important;
+			float: none !important;
+			text-align: center;
+		}
 	</style>
 	<div id="root"></div>
 	<script src="./build/index.js" charset="utf-8"></script>

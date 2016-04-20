@@ -42,3 +42,88 @@ Required styles
 	display: inline-block;
 }
 ```
+
+or you may use fixed width and float left:
+
+```javascript
+import React, { Component } from 'react';
+import ReactAdaptation from 'react-adaptation';
+
+class FloatExampleComponent extends Component {
+	render() {
+		const { ra } = this.props;
+		return (
+			<div ref={ra.container} className={ra.shouldAdaptate ? "container-float mobile" : "container-float"}>
+				<div style={{float: 'left', width: 300}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div style={{float: 'left', width: 400}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+			</div>
+		);
+	}
+}
+
+export default ReactAdaptation(FloatExampleComponent);
+```
+
+## Selected components example
+
+```javascript
+import React, { Component } from 'react';
+import ReactAdaptation from 'react-adaptation';
+
+class CustomComponentsComponent extends Component {
+	render() {
+		const { ra } = this.props;
+		return (
+			<div ref={ra.container} className={ra.shouldAdaptate ? "container mobile" : "container"}>
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div style={{display: 'inline-block'}} ref={ra.component}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div style={{display: 'inline-block'}} ref={ra.component}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+			</div>
+		);
+	}
+}
+
+export default ReactAdaptation(CustomComponentsComponent);
+```
+
+## maxWidth example
+
+```javascript
+import React, { Component } from 'react';
+import ReactAdaptation from 'react-adaptation';
+
+class MaxWidthExampleComponent extends Component {
+	render() {
+		const { ra } = this.props;
+		return (
+			<div ref={ra.container} className={ra.shouldAdaptate ? "container mobile" : "container"}>
+				<div>Lorem ipsum dolor.</div>
+				<div>Lorem ipsum dolor.</div>
+			</div>
+		);
+	}
+}
+
+export default ReactAdaptation(MaxWidthExampleComponent, {maxWidth: 768});
+```
+
+## containerMaxWidth example
+
+```javascript
+import React, { Component } from 'react';
+import ReactAdaptation from 'react-adaptation';
+
+class ContainerMaxWidthExampleComponent extends Component {
+	render() {
+		const { ra } = this.props;
+		return (
+			<div ref={ra.container} className={ra.shouldAdaptate ? "container mobile" : "container"} style={{padding: 20}}>
+				<div>Lorem ipsum dolor.</div>
+				<div>Lorem ipsum dolor.</div>
+			</div>
+		);
+	}
+}
+
+export default ReactAdaptation(ContainerMaxWidthExampleComponent, {containerMaxWidth: 768});
+```

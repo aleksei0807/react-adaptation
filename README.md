@@ -18,7 +18,7 @@ Also it can perform addictive checks like `maxWidth` or `containerMaxWidth`.
 
 ```javascript
 import React, { Component } from 'react';
-import ReactAdaptation from '../../../lib/index';
+import ReactAdaptation from 'react-adaptation';
 
 class DefaultExampleComponent extends Component {
 	render() {

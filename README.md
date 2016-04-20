@@ -14,4 +14,31 @@ Also it can perform addictive checks like `maxWidth` or `containerMaxWidth`.
 
 # Usage example
 
-@todo
+## Default example
+
+```javascript
+import React, { Component } from 'react';
+import ReactAdaptation from '../../../lib/index';
+
+class DefaultExampleComponent extends Component {
+	render() {
+		const { ra } = this.props;
+		return (
+			<div ref={ra.container} className={ra.shouldAdaptate ? "container mobile" : "container"}>
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+			</div>
+		);
+	}
+}
+
+export default ReactAdaptation(DefaultExampleComponent);
+```
+
+Required styles
+
+```css
+.container > * {
+	display: inline-block;
+}
+```

@@ -1,3 +1,7 @@
+[![npm version](https://badge.fury.io/js/react-adaptation.svg)](https://badge.fury.io/js/react-adaptation)
+
+[![NPM](https://nodei.co/npm/react-adaptation.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-adaptation/)
+
 # React Adaptation
 
 Mixin that simplify adaptation of your react components.

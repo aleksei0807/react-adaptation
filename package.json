@@ -1,6 +1,6 @@
 {
   "name": "react-adaptation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mixin that simplify adaptation of your react components",
   "main": "./lib/index.js",
   "scripts": {

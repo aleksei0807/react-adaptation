@@ -19894,6 +19894,7 @@
 				};
 				_this.addComp = _this.addComp.bind(_this);
 				_this.addContainer = _this.addContainer.bind(_this);
+				_this.resizeListener = _this.resizeListener.bind(_this);
 				_this.innerComponents = [];
 				_this.container = null;
 				return _this;
@@ -19902,25 +19903,26 @@
 			_createClass(_class, [{
 				key: 'adaptation',
 				value: function adaptation(innerComponentsWidth) {
-
-					var adaptationComponentWidth = this.container.clientWidth;
-					var newVal = void 0,
-					    documentWidth = void 0,
-					    maxWidth = void 0;
-					var containerMaxWidth = params ? params.containerMaxWidth || 0 : 0;
-					if (params && params.maxWidth) {
-						documentWidth = document.documentElement.clientWidth;
-						maxWidth = params.maxWidth;
-					}
-					if (maxWidth !== undefined && documentWidth <= maxWidth || adaptationComponentWidth <= containerMaxWidth || adaptationComponentWidth <= innerComponentsWidth) {
-						newVal = true;
-					} else {
-						newVal = false;
-					}
-					if (this.state.shouldAdaptate !== newVal) {
-						this.setState({
-							shouldAdaptate: newVal
-						});
+					if (this.container) {
+						var adaptationComponentWidth = this.container.clientWidth;
+						var newVal = void 0,
+						    documentWidth = void 0,
+						    maxWidth = void 0;
+						var containerMaxWidth = params ? params.containerMaxWidth || 0 : 0;
+						if (params && params.maxWidth) {
+							documentWidth = document.documentElement.clientWidth;
+							maxWidth = params.maxWidth;
+						}
+						if (maxWidth !== undefined && documentWidth <= maxWidth || adaptationComponentWidth <= containerMaxWidth || adaptationComponentWidth <= innerComponentsWidth) {
+							newVal = true;
+						} else {
+							newVal = false;
+						}
+						if (this.state.shouldAdaptate !== newVal) {
+							this.setState({
+								shouldAdaptate: newVal
+							});
+						}
 					}
 				}
 			}, {
@@ -19934,10 +19936,13 @@
 					this.container = c;
 				}
 			}, {
+				key: 'resizeListener',
+				value: function resizeListener(e) {
+					this.adaptation(this.state.innerComponentsWidth);
+				}
+			}, {
 				key: 'componentDidMount',
 				value: function componentDidMount() {
-					var _this2 = this;
-
 					var innerComponentsWidth = 0;
 					var calculateWidth = function calculateWidth(c) {
 						var styles = getComputedStyle(c);
@@ -19950,7 +19955,7 @@
 
 					if (this.innerComponents.length > 0) {
 						this.innerComponents.map(calculateWidth);
-					} else {
+					} else if (this.container) {
 						[].map.call(this.container.children, calculateWidth);
 					}
 
@@ -19960,9 +19965,12 @@
 
 					this.adaptation(innerComponentsWidth);
 
-					window.addEventListener('resize', function (e) {
-						_this2.adaptation(_this2.state.innerComponentsWidth);
-					});
+					window.addEventListener('resize', this.resizeListener);
+				}
+			}, {
+				key: 'componentWillUnmount',
+				value: function componentWillUnmount() {
+					window.removeEventListener('resize', this.resizeListener);
 				}
 			}, {
 				key: 'render',

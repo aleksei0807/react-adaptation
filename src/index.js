@@ -9,28 +9,30 @@ var ReactAdaptation = (AdaptationComponent, params) => class extends Component {
 		};
 		this.addComp = this.addComp.bind(this);
 		this.addContainer = this.addContainer.bind(this);
+		this.resizeListener = this.resizeListener.bind(this);
 		this.innerComponents = [];
 		this.container = null;
 	}
 
 	adaptation(innerComponentsWidth) {
-
-		let adaptationComponentWidth = this.container.clientWidth;
-		let newVal, documentWidth, maxWidth;
-		let containerMaxWidth = params ? (params.containerMaxWidth || 0) : 0;
-		if (params && params.maxWidth) {
-			documentWidth = document.documentElement.clientWidth;
-			maxWidth = params.maxWidth;
-		}
-		if ((maxWidth !== undefined && documentWidth <= maxWidth) || (adaptationComponentWidth <= containerMaxWidth) || (adaptationComponentWidth <= innerComponentsWidth)) {
-			newVal = true;
-		} else {
-			newVal = false;
-		}
-		if (this.state.shouldAdaptate !== newVal) {
-			this.setState({
-				shouldAdaptate: newVal
-			});
+		if (this.container) {
+			let adaptationComponentWidth = this.container.clientWidth;
+			let newVal, documentWidth, maxWidth;
+			let containerMaxWidth = params ? (params.containerMaxWidth || 0) : 0;
+			if (params && params.maxWidth) {
+				documentWidth = document.documentElement.clientWidth;
+				maxWidth = params.maxWidth;
+			}
+			if ((maxWidth !== undefined && documentWidth <= maxWidth) || (adaptationComponentWidth <= containerMaxWidth) || (adaptationComponentWidth <= innerComponentsWidth)) {
+				newVal = true;
+			} else {
+				newVal = false;
+			}
+			if (this.state.shouldAdaptate !== newVal) {
+				this.setState({
+					shouldAdaptate: newVal
+				});
+			}
 		}
 	}
 
@@ -41,6 +43,11 @@ var ReactAdaptation = (AdaptationComponent, params) => class extends Component {
 
 	addContainer(c) {
 		this.container = c;
+	}
+
+
+	resizeListener(e) {
+		this.adaptation(this.state.innerComponentsWidth);
 	}
 
 	componentDidMount() {
@@ -56,7 +63,7 @@ var ReactAdaptation = (AdaptationComponent, params) => class extends Component {
 
 		if (this.innerComponents.length > 0) {
 			this.innerComponents.map(calculateWidth);
-		} else {
+		} else if (this.container) {
 			[].map.call(this.container.children, calculateWidth);
 		}
 
@@ -66,9 +73,11 @@ var ReactAdaptation = (AdaptationComponent, params) => class extends Component {
 
 		this.adaptation(innerComponentsWidth);
 
-		window.addEventListener('resize', (e) => {
-			this.adaptation(this.state.innerComponentsWidth);
-		});
+		window.addEventListener('resize', this.resizeListener);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.resizeListener);
 	}
 
 	render() {
